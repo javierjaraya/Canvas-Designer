@@ -18,6 +18,7 @@ var pdfHandler = {
         pageNumber = parseInt(pageNumber) || 1;
 
         if (!pdfHandler.pdf) {
+            pageNumber = 1;
             pdfjsLib.disableWorker = false;
             pdfjsLib.getDocument(pdfHandler.lastPdfURL).then(function(pdf) {
                 pdfHandler.pdf = pdf;
